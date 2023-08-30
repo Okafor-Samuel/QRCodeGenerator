@@ -13,5 +13,5 @@ public class StudentDto {
     private String lastName;
     @NaturalId(mutable = true)
     private String email;
-    private Integer mobileNumber;
+    private String mobileNumber;
 }
