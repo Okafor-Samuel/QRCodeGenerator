@@ -16,4 +16,7 @@ public class StudentService {
     public ResponseEntity<List<Student>> getStudents(){
         return new ResponseEntity<>(studentRepository.findAll(), HttpStatus.OK);
     }
+    public ResponseEntity<Student> addStudent(){
+        return null;
+    }
 }
