@@ -1,14 +1,13 @@
 package com.example.qrcodegenerator.Controller;
 
+import com.example.qrcodegenerator.DTO.StudentDto;
 import com.example.qrcodegenerator.Model.Student;
 import com.example.qrcodegenerator.Service.StudentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,6 +19,17 @@ public class StudentController {
 
     @GetMapping("/get-all-student")
     private ResponseEntity<List<Student>> getStudents(){
-        return new ResponseEntity<>(HttpStatus.OK);
+        return studentService.getStudents();}
+
+    @PostMapping("/add-student")
+    public ResponseEntity<Student> addStudent(@RequestBody StudentDto studentDto){
+    return studentService.addStudent(studentDto);
     }
+    @GetMapping("/get-a-student/{id}")
+    public ResponseEntity<Student> findAStudent(@PathVariable Long id){
+        return studentService.findAStudent(id);
+    }
+
+
+
 }
