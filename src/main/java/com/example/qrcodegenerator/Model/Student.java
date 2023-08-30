@@ -22,7 +22,7 @@ public class Student {
     private String lastName;
     @NaturalId(mutable = true)
     private String email;
-    private Integer mobileNumber;
+    private String mobileNumber;
 
     public Student(StudentDto studentDto){
         this.firstName = studentDto.getFirstName();
