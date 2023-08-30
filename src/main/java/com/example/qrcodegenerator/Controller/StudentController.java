@@ -4,8 +4,6 @@ import com.example.qrcodegenerator.DTO.StudentDto;
 import com.example.qrcodegenerator.Model.Student;
 import com.example.qrcodegenerator.Service.StudentService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
