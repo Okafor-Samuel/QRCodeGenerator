@@ -23,7 +23,7 @@ public class StudentController {
         List<Student> students = studentService.getStudents().getBody();
         if(students.size() !=0){
             for (Student student: students){
-                QRCodeGenerator.generateQRCode(new StudentDto());
+                QRCodeGenerator.generateQRCode(student);
             }
         }
         return studentService.getStudents();}
