@@ -27,9 +27,10 @@ public class StudentService {
     public ResponseEntity<Student> findAStudent(Long id){
         Optional<Student> student = studentRepository.findById(id);
         if(!student.isPresent()){
-            throw new StudentNotFoundException("Student with "+id+ " not found");
+            throw new StudentNotFoundException("Student with id "+id+ " not found");
         }
-        return new ResponseEntity<>(HttpStatus.OK);
+        Student targetStudent = student.get();
+       return new ResponseEntity<>(targetStudent,HttpStatus.OK);
     }
 
 
